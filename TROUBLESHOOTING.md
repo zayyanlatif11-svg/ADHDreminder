@@ -11,6 +11,69 @@ problems below are things `doctor` will already have told you.
 
 ---
 
+## `npm install` fails with C++ compiler errors
+
+If you see hundreds of lines ending in something like:
+
+```
+v8-context.h:501:35: error: expected expression
+gyp ERR! build error
+```
+
+…you are on an unsupported Node version. Check it:
+
+```bash
+node --version
+```
+
+**This project needs Node 20 or 22.** Those are the LTS lines. `better-sqlite3`
+publishes prebuilt binaries only for LTS, and its source does not compile
+against the V8 headers in newer "Current" releases such as Node 23, 24 or 25.
+
+Homebrew's plain `node` formula tracks Current, so `brew install node` gives you
+a version this cannot build on.
+
+### Fix it with Homebrew
+
+```bash
+brew install node@22
+echo 'export PATH="/opt/homebrew/opt/node@22/bin:$PATH"' >> ~/.zshrc
+source ~/.zshrc
+node --version          # must print v22.x
+```
+
+Then reinstall from a clean slate — the failed attempt leaves a half-finished
+`node_modules`:
+
+```bash
+cd ~/ADHDreminder
+rm -rf node_modules
+npm install
+```
+
+### Or with nvm
+
+```bash
+nvm install 22
+nvm use 22
+rm -rf node_modules && npm install
+```
+
+The repo has an `.nvmrc`, so plain `nvm use` picks the right version.
+
+### Symptom that follows from this
+
+When the install aborts, later dependencies never get installed. So the very
+next thing you run fails with something like:
+
+```
+sh: tsx: command not found
+```
+
+That is not a separate problem. Fix the Node version, reinstall, and it goes.
+
+---
+
 ## Nothing happens when I text the agent
 
 This is the most common problem, and it has a short list of causes. Work down it.
