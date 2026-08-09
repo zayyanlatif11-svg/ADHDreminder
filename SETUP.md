@@ -193,6 +193,12 @@ see "Calendar access not granted" later:
 
 ### Linking calendars to courses
 
+To see the exact names of every calendar the agent can read:
+
+```bash
+npm run calendars
+```
+
 Open your spreadsheet's **COURSES** tab and fill in the `calendar_id` column
 with the name of the calendar each class lives on (for example `MATH 1A`). This
 is how the agent recognises assignment deadlines that Canvas already syncs into

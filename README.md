@@ -150,6 +150,7 @@ startup work rather than taking it on faith.
 |---|---|
 | `npm run setup` | Interactive setup. Re-runnable |
 | `npm run doctor` | Check every dependency and report the fix for each problem |
+| `npm run calendars` | List every calendar the agent can see, by exact name |
 | `npm run dev` | Run locally with hot reload |
 | `npm test` | Full automated test suite |
 | `npm run simulate` | Exercise every command locally, sending nothing |

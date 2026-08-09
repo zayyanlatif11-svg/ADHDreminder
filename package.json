@@ -15,6 +15,7 @@
     "start:tsx": "tsx src/index.ts",
     "setup": "tsx src/cli/setup.ts",
     "doctor": "tsx src/cli/doctor.ts",
+    "calendars": "tsx src/cli/calendars.ts",
     "simulate": "tsx src/cli/simulate.ts",
     "send:test": "tsx src/cli/sendTest.ts",
     "seed": "tsx src/cli/seed.ts",
