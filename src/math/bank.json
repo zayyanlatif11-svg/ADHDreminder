@@ -1,0 +1,73 @@
+{
+  "concepts": [
+    { "id": "signed_numbers", "label": "signed numbers", "order": 1 },
+    { "id": "fractions", "label": "fractions", "order": 2 },
+    { "id": "exponents", "label": "exponent laws", "order": 3 },
+    { "id": "factoring", "label": "factoring", "order": 4 },
+    { "id": "linear_equations", "label": "linear equations", "order": 5 },
+    { "id": "functions", "label": "functions", "order": 6 },
+    { "id": "algebra_manipulation", "label": "algebra manipulation", "order": 7 }
+  ],
+  "questions": [
+    { "id": "sn-1", "concept": "signed_numbers", "prompt": "-4 + 7 = ?", "answer": "3", "type": "integer", "difficulty": 1 },
+    { "id": "sn-2", "concept": "signed_numbers", "prompt": "-9 + -5 = ?", "answer": "-14", "type": "integer", "difficulty": 1 },
+    { "id": "sn-3", "concept": "signed_numbers", "prompt": "6 - (-3) = ?", "answer": "9", "type": "integer", "difficulty": 1 },
+    { "id": "sn-4", "concept": "signed_numbers", "prompt": "-8 - 5 = ?", "answer": "-13", "type": "integer", "difficulty": 1 },
+    { "id": "sn-5", "concept": "signed_numbers", "prompt": "(-3)(-7) = ?", "answer": "21", "type": "integer", "difficulty": 2 },
+    { "id": "sn-6", "concept": "signed_numbers", "prompt": "-24 / 6 = ?", "answer": "-4", "type": "integer", "difficulty": 2 },
+    { "id": "sn-7", "concept": "signed_numbers", "prompt": "-2 - (-2) = ?", "answer": "0", "type": "integer", "difficulty": 2 },
+    { "id": "sn-8", "concept": "signed_numbers", "prompt": "(-2)^3 = ?", "answer": "-8", "type": "integer", "difficulty": 2 },
+    { "id": "sn-9", "concept": "signed_numbers", "prompt": "(-2)^4 = ?", "answer": "16", "type": "integer", "difficulty": 3 },
+    { "id": "sn-10", "concept": "signed_numbers", "prompt": "-3 + 8 - 12 = ?", "answer": "-7", "type": "integer", "difficulty": 3 },
+
+    { "id": "fr-1", "concept": "fractions", "prompt": "1/2 + 1/4 = ? (write as a fraction)", "answer": "3/4", "type": "fraction", "difficulty": 1 },
+    { "id": "fr-2", "concept": "fractions", "prompt": "2/3 + 1/6 = ?", "answer": "5/6", "type": "fraction", "difficulty": 2 },
+    { "id": "fr-3", "concept": "fractions", "prompt": "3/4 - 1/2 = ?", "answer": "1/4", "type": "fraction", "difficulty": 1 },
+    { "id": "fr-4", "concept": "fractions", "prompt": "2/3 x 3/5 = ?", "answer": "2/5", "type": "fraction", "difficulty": 2 },
+    { "id": "fr-5", "concept": "fractions", "prompt": "1/2 divided by 1/4 = ?", "answer": "2", "type": "fraction", "difficulty": 2 },
+    { "id": "fr-6", "concept": "fractions", "prompt": "Simplify 12/18.", "answer": "2/3", "type": "fraction", "difficulty": 1 },
+    { "id": "fr-7", "concept": "fractions", "prompt": "5/6 - 1/3 = ?", "answer": "1/2", "type": "fraction", "difficulty": 2 },
+    { "id": "fr-8", "concept": "fractions", "prompt": "(-1/2) + 3/4 = ?", "answer": "1/4", "type": "fraction", "difficulty": 3 },
+    { "id": "fr-9", "concept": "fractions", "prompt": "2/5 divided by 4/15 = ?", "answer": "3/2", "type": "fraction", "difficulty": 3 },
+
+    { "id": "ex-1", "concept": "exponents", "prompt": "x^3 * x^4 = x^? (just the exponent)", "answer": "7", "type": "integer", "difficulty": 1 },
+    { "id": "ex-2", "concept": "exponents", "prompt": "x^9 / x^4 = x^? (just the exponent)", "answer": "5", "type": "integer", "difficulty": 1 },
+    { "id": "ex-3", "concept": "exponents", "prompt": "(x^2)^5 = x^? (just the exponent)", "answer": "10", "type": "integer", "difficulty": 2 },
+    { "id": "ex-4", "concept": "exponents", "prompt": "2^0 = ?", "answer": "1", "type": "integer", "difficulty": 1 },
+    { "id": "ex-5", "concept": "exponents", "prompt": "2^-3 = ? (write as a fraction)", "answer": "1/8", "type": "fraction", "difficulty": 3 },
+    { "id": "ex-6", "concept": "exponents", "prompt": "3^4 = ?", "answer": "81", "type": "integer", "difficulty": 2 },
+    { "id": "ex-7", "concept": "exponents", "prompt": "(2x^3)^2 = ?x^6 (just the coefficient)", "answer": "4", "type": "integer", "difficulty": 3 },
+    { "id": "ex-8", "concept": "exponents", "prompt": "x^5 / x^8 = x^? (just the exponent)", "answer": "-3", "type": "integer", "difficulty": 3 },
+
+    { "id": "fa-1", "concept": "factoring", "prompt": "Factor: x^2 + 5x + 6. Answer as (x+a)(x+b) with a<=b: what are a and b? (e.g. 2,3)", "answer": "2,3", "type": "pair", "difficulty": 2 },
+    { "id": "fa-2", "concept": "factoring", "prompt": "Factor: x^2 + 7x + 12. Give a,b with a<=b.", "answer": "3,4", "type": "pair", "difficulty": 2 },
+    { "id": "fa-3", "concept": "factoring", "prompt": "Factor: x^2 - 9. Give a,b with a<=b for (x+a)(x+b).", "answer": "-3,3", "type": "pair", "difficulty": 2 },
+    { "id": "fa-4", "concept": "factoring", "prompt": "Factor: x^2 - 5x + 6. Give a,b with a<=b.", "answer": "-3,-2", "type": "pair", "difficulty": 3 },
+    { "id": "fa-5", "concept": "factoring", "prompt": "Factor out the GCF: 6x + 9. What is the GCF?", "answer": "3", "type": "integer", "difficulty": 1 },
+    { "id": "fa-6", "concept": "factoring", "prompt": "Factor: x^2 + 2x - 8. Give a,b with a<=b.", "answer": "-2,4", "type": "pair", "difficulty": 3 },
+    { "id": "fa-7", "concept": "factoring", "prompt": "Factor out the GCF: 12x^2 + 18x. What is the GCF? (number only)", "answer": "6", "type": "integer", "difficulty": 2 },
+
+    { "id": "le-1", "concept": "linear_equations", "prompt": "Solve for x: 2x + 3 = 11", "answer": "4", "type": "integer", "difficulty": 1 },
+    { "id": "le-2", "concept": "linear_equations", "prompt": "Solve for x: 5x - 7 = 18", "answer": "5", "type": "integer", "difficulty": 1 },
+    { "id": "le-3", "concept": "linear_equations", "prompt": "Solve for x: 3x + 4 = x + 10", "answer": "3", "type": "integer", "difficulty": 2 },
+    { "id": "le-4", "concept": "linear_equations", "prompt": "Solve for x: -2x = 14", "answer": "-7", "type": "integer", "difficulty": 2 },
+    { "id": "le-5", "concept": "linear_equations", "prompt": "Solve for x: x/3 = 5", "answer": "15", "type": "integer", "difficulty": 1 },
+    { "id": "le-6", "concept": "linear_equations", "prompt": "Solve for x: 2(x + 3) = 16", "answer": "5", "type": "integer", "difficulty": 2 },
+    { "id": "le-7", "concept": "linear_equations", "prompt": "Solve for x: 4x + 1 = 2x - 9", "answer": "-5", "type": "integer", "difficulty": 3 },
+    { "id": "le-8", "concept": "linear_equations", "prompt": "Solve for x: 2x + 1 = 4 (write as a fraction)", "answer": "3/2", "type": "fraction", "difficulty": 3 },
+
+    { "id": "fn-1", "concept": "functions", "prompt": "f(x) = 2x + 1. What is f(3)?", "answer": "7", "type": "integer", "difficulty": 1 },
+    { "id": "fn-2", "concept": "functions", "prompt": "f(x) = x^2 - 4. What is f(-2)?", "answer": "0", "type": "integer", "difficulty": 2 },
+    { "id": "fn-3", "concept": "functions", "prompt": "f(x) = 3x - 5. What is f(0)?", "answer": "-5", "type": "integer", "difficulty": 1 },
+    { "id": "fn-4", "concept": "functions", "prompt": "f(x) = x^2 + x. What is f(-3)?", "answer": "6", "type": "integer", "difficulty": 3 },
+    { "id": "fn-5", "concept": "functions", "prompt": "Line through (0,2) with slope 3: what is y when x = 4?", "answer": "14", "type": "integer", "difficulty": 3 },
+    { "id": "fn-6", "concept": "functions", "prompt": "Slope between (1,2) and (3,8)?", "answer": "3", "type": "integer", "difficulty": 2 },
+
+    { "id": "am-1", "concept": "algebra_manipulation", "prompt": "Simplify: 3x + 5x = ?x (coefficient only)", "answer": "8", "type": "integer", "difficulty": 1 },
+    { "id": "am-2", "concept": "algebra_manipulation", "prompt": "Expand: 2(x + 4) = 2x + ? (constant only)", "answer": "8", "type": "integer", "difficulty": 1 },
+    { "id": "am-3", "concept": "algebra_manipulation", "prompt": "Expand: (x + 2)(x + 3) = x^2 + ?x + 6 (middle coefficient)", "answer": "5", "type": "integer", "difficulty": 2 },
+    { "id": "am-4", "concept": "algebra_manipulation", "prompt": "Simplify: 7x - 2x - 4x = ?x (coefficient only)", "answer": "1", "type": "integer", "difficulty": 2 },
+    { "id": "am-5", "concept": "algebra_manipulation", "prompt": "Solve for y: 2y + 3x = 12 when x = 2", "answer": "3", "type": "integer", "difficulty": 3 },
+    { "id": "am-6", "concept": "algebra_manipulation", "prompt": "Expand: (x - 4)(x + 4) = x^2 - ? (constant only)", "answer": "16", "type": "integer", "difficulty": 2 }
+  ]
+}
