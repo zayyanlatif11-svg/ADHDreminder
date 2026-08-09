@@ -182,6 +182,8 @@ export interface DoneInput {
   courses: Course[];
   /** Set when finishing this task unlocked startup work. */
   startupUnlocked?: boolean;
+  /** Open academic tasks still due within 48h. */
+  academicOutstandingCount?: number;
 }
 
 export function formatDone(input: DoneInput): string {
@@ -189,7 +191,14 @@ export function formatDone(input: DoneInput): string {
 
   if (input.startupUnlocked) {
     lines.push('');
-    lines.push('Academic must-dos are done.');
+    // Two different things unlock startup work, and saying the wrong one is a
+    // lie the user can see through: clearing the deck is not the same as
+    // hitting a daily minute floor while an assignment is still due.
+    lines.push(
+      (input.academicOutstandingCount ?? 0) === 0
+        ? 'Academic must-dos are done.'
+        : "That's today's academic minimum.",
+    );
     lines.push('Startup is unlocked.');
   }
 

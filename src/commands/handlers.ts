@@ -136,6 +136,7 @@ export async function handleDone({ agent, context }: HandlerDeps): Promise<strin
     next,
     courses: refreshed.courses,
     startupUnlocked,
+    academicOutstandingCount: refreshed.academicOutstandingCount,
   });
 }
 

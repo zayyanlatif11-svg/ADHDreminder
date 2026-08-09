@@ -5,7 +5,7 @@ import { rankTasks, isLockedByAcademics } from '../src/prioritization/engine.js'
 import { assessAutoRescue } from '../src/prioritization/rescue.js';
 import { evaluateRollover, promotedIds } from '../src/prioritization/rollover.js';
 import { microActionFor } from '../src/commands/handlers.js';
-import { formatMorningMessage } from '../src/messaging/formatter.js';
+import { formatDone, formatMorningMessage } from '../src/messaging/formatter.js';
 
 const courses = [course({ courseId: 'CALC', riskLevel: 'red' })];
 
@@ -303,6 +303,41 @@ describe('automatic rescue', () => {
       config: config({ automatic_rescue_enabled: false }),
     });
     expect(assessment.shouldActivate).toBe(false);
+  });
+});
+
+describe('the startup-unlock message tells the truth', () => {
+  const base = {
+    completed: task({ title: 'Calc practice', category: 'academic' as const }),
+    completedCount: 1,
+    totalCount: 3,
+    next: task({ title: 'Finish Econ discussion post', category: 'academic' as const }),
+    courses,
+    startupUnlocked: true,
+  };
+
+  it('does not claim academics are done while an academic task is still due', () => {
+    const message = formatDone({ ...base, academicOutstandingCount: 1 });
+
+    // The exact failure seen in the simulation: "Academic must-dos are done."
+    // printed directly above an outstanding academic task.
+    expect(message).not.toContain('Academic must-dos are done.');
+    expect(message).toContain("That's today's academic minimum.");
+    expect(message).toContain('Startup is unlocked.');
+  });
+
+  it('does say academics are done when nothing academic remains', () => {
+    const message = formatDone({ ...base, academicOutstandingCount: 0, next: null });
+
+    expect(message).toContain('Academic must-dos are done.');
+    expect(message).toContain('Startup is unlocked.');
+  });
+
+  it('says nothing about startup when it has not unlocked', () => {
+    const message = formatDone({ ...base, startupUnlocked: false, academicOutstandingCount: 1 });
+
+    expect(message).not.toContain('Startup is unlocked.');
+    expect(message).not.toContain('Academic must-dos are done.');
   });
 });
 
