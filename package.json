@@ -1,0 +1,53 @@
+{
+  "name": "execution-agent",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Personal ADHD execution agent over iMessage. Local-first, Google Sheets + Calendar + BlueBubbles.",
+  "type": "module",
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "dev": "tsx watch src/index.ts",
+    "start": "node dist/index.js",
+    "start:tsx": "tsx src/index.ts",
+    "setup": "tsx src/cli/setup.ts",
+    "doctor": "tsx src/cli/doctor.ts",
+    "simulate": "tsx src/cli/simulate.ts",
+    "send:test": "tsx src/cli/sendTest.ts",
+    "seed": "tsx src/cli/seed.ts",
+    "auth:google": "tsx src/cli/authGoogle.ts",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "lint": "eslint . --ext .ts",
+    "install:launchd": "bash scripts/launchd/install.sh",
+    "uninstall:launchd": "bash scripts/launchd/uninstall.sh"
+  },
+  "dependencies": {
+    "better-sqlite3": "^11.10.0",
+    "chrono-node": "^2.7.7",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "googleapis": "^144.0.0",
+    "luxon": "^3.5.0",
+    "node-cron": "^3.0.3",
+    "pino": "^9.6.0",
+    "zod": "^3.24.1"
+  },
+  "devDependencies": {
+    "@types/better-sqlite3": "^7.6.12",
+    "@types/express": "^4.17.21",
+    "@types/luxon": "^3.4.2",
+    "@types/node": "^22.10.5",
+    "@types/node-cron": "^3.0.11",
+    "@typescript-eslint/eslint-plugin": "^8.20.0",
+    "@typescript-eslint/parser": "^8.20.0",
+    "eslint": "^8.57.1",
+    "pino-pretty": "^13.0.0",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.3",
+    "vitest": "^2.1.8"
+  }
+}
