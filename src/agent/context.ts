@@ -24,6 +24,12 @@ export interface AgentContext {
   rescueActive: boolean;
   academicMinimumMet: boolean;
   academicCompletedMinutes: number;
+  /**
+   * Open academic tasks due within 48h. Distinguishes "the minimum is met but
+   * work remains" from "there is genuinely nothing academic left", which the
+   * agent must not conflate when it tells the user where they stand.
+   */
+  academicOutstandingCount: number;
 }
 
 export function todayKey(context: AgentContext): string {

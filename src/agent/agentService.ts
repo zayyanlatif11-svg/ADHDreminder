@@ -133,6 +133,7 @@ export class AgentService {
       rescueActive,
       academicMinimumMet: academic.met,
       academicCompletedMinutes: academic.completedMinutes,
+      academicOutstandingCount: academic.outstanding.length,
     };
   }
 
