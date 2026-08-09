@@ -22,7 +22,14 @@ Open **Terminal** (press `Cmd+Space`, type "Terminal", press Enter) and run:
 node --version
 ```
 
-If you see `v20.` or higher (e.g. `v22.11.0`), skip to step 2.
+You need **Node 20 or 22**. If you see `v20.` or `v22.`, skip to step 2.
+
+> **Not any newer version.** Node 23, 24 and 25 will not work. One of this
+> project's dependencies (`better-sqlite3`) ships prebuilt binaries only for the
+> LTS lines, and cannot compile against newer ones — you would get several
+> hundred lines of C++ compiler errors. Homebrew's plain `node` formula installs
+> the newest release, so `brew install node` is the wrong command here; use
+> `brew install node@22`.
 
 **MANUAL STEP** — Otherwise, go to <https://nodejs.org> and download the
 **LTS** version. Open the downloaded `.pkg` file and click through the
